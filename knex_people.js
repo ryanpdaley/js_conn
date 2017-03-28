@@ -11,7 +11,7 @@ var knex = require('knex')({
 });
 
 
-nameQuery = process.argv[2];
+let nameQuery = process.argv[2];
 
 const findPeople = (nameToSearch, callback) => {
   knex.select('*').from('famous_people').where('first_name', '=', nameToSearch).orWhere('last_name', '=', nameToSearch)
